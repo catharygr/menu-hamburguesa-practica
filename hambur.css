@@ -1,0 +1,100 @@
+
+:root {
+ --clr-dark: 230 35% 7%;
+ --clr-white: 0 0% 100%;
+}
+
+
+
+
+body {
+  background-image: url(globo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+  
+}
+ h1 {
+   text-align: center;
+ }
+
+a {
+  color: white;
+}
+
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.probando {
+  position: absolute; 
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; 
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; 
+  border: 0;
+}
+
+
+.navegacion {
+  gap: 2rem;
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 0 20%; 
+  background: hsl(var(--clr-white)/0.95);
+  backdrop-filter: blur(1.5rem);
+  -webkit-backdrop-filter: blur(1.5rem);
+  list-style: none;
+  padding: min(10rem,5vh) 2rem;
+  margin: 0;
+  flex-direction: column;
+  transform: translateX(100%);
+}
+
+
+.navegacion a {
+  text-decoration: none;
+}
+
+.navegacion a > span {
+  margin-right: .5em;
+}
+
+.esconder-boton {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  right: 1rem;
+  top: 2rem;
+  background: black;
+  background-image: url(./entrada/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border: 0;
+}
+
+
+.indicador > * {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 0;
+  border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
+  
+}
+@media (hover: hover) {
+  .indicador > *:hover{
+      border-color: hsl( var(--clr-white) / .5);
+  }
+}
+
+
