@@ -8,15 +8,20 @@
 
 
 body {
-  background-image: url(globo.jpg);
-  background-repeat: no-repeat;
+  background-image: url(entrada/globo.jpg);
+  background-repeat: no-repeat; 
   background-size: cover;
   min-height: 100vh;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.5rem;
   text-transform: uppercase;
   color: palevioletred;
+  margin: 0;
   
+}
+
+header {
+  background-color: darkolivegreen;
 }
  h1 {
    text-align: center;
@@ -27,22 +32,79 @@ body {
   gap: 1rem;
 }
 
-.navegacion {
-  gap: 2rem;
-  position: fixed;
-  z-index: 1000;
-  inset: 0 0 0 20%;
-  background: lightblue;  
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
-}
+.probando {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; 
+    border: 0;
+  }
+
 
 .navegacion {
+  gap: 3rem;
+  position: fixed;
+  z-index: 1000;
+  inset: 0 0 0 20%; 
+  list-style: none;
+  padding: min(20rem, 15vh) 2rem;
+  margin: 0;
+  flex-direction: column;
+  background: hsl( var(--clr-dark) / 0.35);
+  backdrop-filter: blur(1.5rem);
+  -webkit-backdrop-filter: blur(1.5rem);
+  transform: translateX(100%);
+  transition: transform 250ms;
+}
+
+
+.navegacion a {
   text-decoration: none;
 }
 
-.navegacion {
+.navegacion a > span {
   margin-right: .5rem;
+}
+
+.navegacion[data-visible='true'] {
+  transform: translateX(0);
+}
+
+.esconder-boton {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  right: 1rem;
+  top: 2.8rem;
+  background: transparent;
+  background-image: url(./entrada/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border: 0;
+  cursor: pointer;
+}
+
+.esconder-boton[aria-expanded="true"] {
+  background-image: url(./entrada/icon-cerrado.svg);
+}
+
+
+.indicador {
+  padding: 8rem ;
+  border: 0;
+  border-bottom:  .2rem solid hsl(var(--clr-white)/ 0);
+}
+
+.indicador  > *:hover {
+  border-color: hsl(var(--clr-white)/ 0.5);
+}
+
+li  a {
+  color: white;
+  font-weight: bold;
 }
